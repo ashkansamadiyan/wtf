@@ -11,13 +11,11 @@ async function main() {
 
   await Promise.all(promises);
   console.log(`${(Date.now() - t) / 1000} seconds`);
-  // Optionally, inspect the results array:
   // console.log(results);
 }
 
 async function callDb(delay, i, results) {
   await new Promise((resolve) => setTimeout(resolve, delay * 1000));
-  // Uncomment the next line to log each call (not recommended for 5 million tasks)
   // console.log(`item: ${i} slept for ${delay} seconds`);
   results.push(i);
 }
